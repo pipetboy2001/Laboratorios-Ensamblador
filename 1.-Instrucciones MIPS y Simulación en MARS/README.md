@@ -51,5 +51,26 @@
  - En la instrucción siguiente se resta 1 a $t2 y se guarda en $t3.
  - Posteriormente se le suma 12 al registro que contiene la dirección, ya que cada índice del arreglo se debe multiplicar por 4 para que se “corra” hasta esa posición.
  - Luego se guarda el valor del registro $t3 en el índice 3 de $t0.
+ 
+## Traduce este código en instrucciones MIPS, y guárdalas en un archivo llamado “program4.s”.
+
+    int a = 2; // usar $t6 para almacenar valores de a
+    int b = 10; // usar $t7 para almacenar valores de b
+    int m = 0; // usar $t0 para almacenar valores de m
+    while (a > 0){
+	    m += b;
+	    a -= 1;
+	}
+## Solución:
+
+ - Se usan los registros $t6, $t7 y $t0 para representar las variables a, b, m, respectivamente según el anunciado.
+
+ - Para representar el while, se usan los labels while y loop.
+ - Para representar la condición del while se usa bgtz, que salta al
+   label loop cuando le valor en $t6 (a) es mayor a 0.
+ - Si no se cumple se hace un jump a end, que termina el programa.
+ - En el label loop, se suma $t0 (m) a $t7 (b) y se guarda en $t0.
+ - Luego se le resta 1 a $t6 y se guarda en $t6.
+ - Finalmente se hace un jump a while, para repetir el ciclo.
 
  ![Lenguaje Ensamblador](http://i.imgur.com/wYzhTBz.jpg)
